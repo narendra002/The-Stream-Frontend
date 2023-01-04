@@ -10,7 +10,7 @@ const Banner = ({BannerType}) => {
 
 
 const link=`${imgUrl}${BannerType?.backdrop_path}`;
-	console.log(link);
+
 return(	
 
   <>  
