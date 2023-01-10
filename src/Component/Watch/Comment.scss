@@ -1,0 +1,22 @@
+.maindiv{
+    display:flex;
+    flex-direction:column;
+    background-color:#242A3C;
+}
+.commentHead{
+  display:flex;
+  align-items:center;
+  flex-direction:row;
+  >h{
+    margin-right:20px;
+    margin-left:20px;
+  }
+  >h1{
+     font-synthesis: style;
+  }
+}
+.docomment{
+   display:flex;
+  align-items:center;
+  flex-direction:row;
+}

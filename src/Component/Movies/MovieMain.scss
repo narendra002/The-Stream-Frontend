@@ -1,0 +1,99 @@
+.MainMovie{
+  height:fit-content;
+  display:flex;
+  justify-content:center;
+ background-image: url(http://wallpaperstock.net/interstellar-movie-poster_wallpapers_46588_852x480.jpg);
+	background-size:cover;
+	background-repeat:no-repeat;
+  object-fit:center;
+	
+}
+
+
+.posterImg{
+  height:fit-content;
+  width:250px;
+}
+
+.movieInfo{
+  width:100%;
+  // background-color:green;
+  margin-bottom:50px;
+}
+
+.imgandinfo{
+  width: 900px;
+
+  height: fit-content;
+  display:flex;
+  margin-top:200px;
+  flex-direction:row;
+  padding-left:50px;
+  padding-right:50px;
+  padding-top:50px;
+
+  margin-right:200px;
+  // background-color:red;
+
+}
+
+.movieInfo{
+  padding-left:50px;
+  padding-right:50px;
+  display:flex;
+  justify-content:space-between;
+  flex-direction: column;
+
+  > .year{
+     font-size:16px;
+  }
+  
+}
+.MovieName{
+       font-size:25px;
+
+}
+.genres{
+  // background-color:black;
+  >ul{
+  display:flex;
+    justify-content:left;
+    margin-left:20px;
+  // flex-direction:row;
+    >li{
+          padding-right:30px;
+
+    }
+  }
+  
+}
+.decription{
+  max-width:800px;
+  text-align:center;
+  overflow: hidden;
+  // text-overflow: ellipsis;
+}
+.duration_imdb{
+  display:flex;
+  // background-color:red;
+  justify-content:space-between;
+}
+.Button{
+     width:350px;
+     display:flex;
+     justify-content:space-between;
+     // background-color:blue;
+  > .watchnow{
+    padding: 10px 40px 10px 40px ;
+    background-color:red;
+    border-radius: 25px;
+    border:none;
+    transform: 25px;
+
+  }
+  >.readmore{
+    background:transparent;
+    border:none;
+    
+  }
+}
