@@ -1,8 +1,12 @@
 import React from 'react';
 import './Moviedescription.scss';
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import {Routes, Route, useNavigate, useLocation} from 'react-router-dom';
 
 const Moviedescription =()=>{
+
+  const location=useLocation();
+  const { movie } = location.state;
+console.log(movie);
     const navigate = useNavigate();
 
    const navigateHome = () => {
@@ -11,9 +15,9 @@ const Moviedescription =()=>{
 return (
     <div className='Moviedescription'>
       
-        <h1>The ice age</h1>
-          <h>2022</h>
-        <p className='Dec_pera'>iieilrjngilanegliu eiurghieulrhcgiuherrigheurhg uiewhgierf hdrtrh rdtyblnejbnrglnoinogeinroi oirnggoin erngo e
+        <h1>{movie.title}</h1>
+          <h>{movie.first_air_date}</h>
+        <p className='Dec_pera'>{movie.desc}
         </p>
 
       <button className='viewdetail' onClick={navigateHome}> View Detail</button>
@@ -35,7 +39,6 @@ return (
 )
 }
 export default Moviedescription;
-
 
 
 

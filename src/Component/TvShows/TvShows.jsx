@@ -10,7 +10,7 @@ const TopRatedMovies="top_rated";
 const UpcomingMovies="upcoming";
 const TvShows = () => {
 	const Popular=BannerTvShowApi(PopularTvShows);
-const PopularTvShow =TvShowsApi(PopularTvShows);
+const PopularTvShow =TvShowsApi();
 
     return (
         <section className="tv_Shows">

@@ -15,7 +15,7 @@ import {BrowserRouter as Router ,Routes,Route} from "react-router-dom"
        <Navbar/>
     <Routes>
     <Route path="/" element={<Home/>}/>
-    <Route path="/Watch" element={<Watch/>}/>
+    <Route path="/Watch/:watchId" element={<Watch/>}/>
 		<Route path="/Movies" element={<Movies/>}/>
 	  <Route path="/TvShows" element={<TvShows/>}/>
    	<Route path="/Anime" element={<Anime/>}/>

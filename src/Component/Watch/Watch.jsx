@@ -19,9 +19,13 @@ const TopRatedMovies="top_rated";
 const UpcomingMovies="upcoming";
  const imgUrl="https://image.tmdb.org/t/p/original";
 import MoviesApi from '../AxiosApi';
+import { useLocation } from 'react-router-dom';
 
 const Watch =()=>{
   
+  const location=useLocation();
+  const { movie } = location.state;
+
   	const upcoming =MoviesApi(UpcomingMovies);
 	const Popular =MoviesApi(PopularMovies);
 	
@@ -34,15 +38,16 @@ const Watch =()=>{
 		<div className='watchmain'>
     
     <List/>
+    
     <Player/>
     <Moviedescription/>
 
     </div>
           <Comment/>
 
-          <Row title={"Popular Movies"} arr={Popular}/>
-          <Row title={"Top Rated"} arr={TopRated}/>
-          <Row title={"UpComing"} arr={upcoming}/>    
+          {/* <Row title={"Popular Movies"} arr={Popular}/> */}
+          {/* <Row title={"Top Rated"} arr={TopRated}/> */}
+          {/* <Row title={"UpComing"} arr={upcoming}/>     */}
     </div>
 
     </>
