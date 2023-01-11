@@ -7,7 +7,7 @@ import "video-react/dist/video-react.css";
 
 import List from "./List.jsx";
 import Player from "./Player.jsx";
-import Moviedescription from "./Moviedescription.jsx"
+import TvShowDescription from "./TvShowDescription.jsx"
 import Comment from "./Comment.jsx"
 
 import Row from "../Row/Row.jsx"
@@ -24,7 +24,8 @@ import { useLocation } from 'react-router-dom';
 const Watch =()=>{
   
   const location=useLocation();
-  const { movie } = location.state;
+  const { tvShow } = location.state;
+console.log(tvShow);
 
   	const upcoming =MoviesApi(UpcomingMovies);
 	const Popular =MoviesApi(PopularMovies);
@@ -40,8 +41,11 @@ const Watch =()=>{
     <List/>
     
     <Player/>
-    <Moviedescription/>
-
+    <TvShowDescription/>
+    {/* <Moviedescription/> */}
+    {/* <a href={tvShow.trailer} target="_blank" rel="noopener noreferrer">
+  Go to Watch TvShow
+</a> */}
     </div>
           <Comment/>
 

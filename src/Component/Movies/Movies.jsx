@@ -10,7 +10,7 @@ const UpcomingMovies="upcoming";
 const Movies = () => {
 	const upcoming =BannerApi(UpcomingMovies);
 		const Popular =MovieApi();
-	
+	console.log(Popular);
     return (
         <section className="movies">
       <Banner BannerType={upcoming}/>

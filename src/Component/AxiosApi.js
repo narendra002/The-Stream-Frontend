@@ -67,7 +67,7 @@ export const MovieApi=(TypeMovies)=>{
 	useEffect(()=>{
 		const fetchTvShows= async() => {
 			const res= await axios.get(`${url1}/tvShow`);
- setTvShows(res);
+             setTvShows(res.data);
 		
 		};
 		fetchTvShows();

@@ -24,7 +24,7 @@ const Row =({title,arr=[]})=>
      to={"/watch/"+item._id}
     state={{tvShow:item}}> 
   <Card key={index} poster={item.poster_path}/>
- </Link>
+</Link>
 		))
         
 		}

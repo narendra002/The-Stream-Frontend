@@ -14,35 +14,35 @@ const Player=()=> {
   const location=useLocation();
   const { movie } = location.state;
 console.log(movie);
+const { tvShow } = location.state;
+console.log(tvShow);
+
   
   return(
     <>
     <div className='moviecomp'>
       <div className='player-wrapper'>
-       {/* <ReactPlayer
+       <ReactPlayer
               className='react-player'
        
-            playing url ='https://firebasestorage.googleapis.com/v0/b/thestream-1a744.appspot.com/o/items%2Fy2meta.com-All%20over%20in%2010%20seconds-(144p).mp4?alt=media&token=616b51f1-c646-40a7-834f-a5826cf83d91'
-            light='true'
+            playing url ={tvShow.trailer}
               controls
-				    	// width='100%'
-              // height="400px"
-              /> */}
+				    	width='100%'
+              height="400px"
+              />
 
 
       {/* <video 
        className='react-player'
       width="100%" height="400px" controls>
-          <source src={movie.video} type="video/mkv"
+          <source src={tvShow.trailer} type="video/mkv"
            />
            
           Your browser does not support the video tag.
 
       </video> */}
 
-      <a href={movie.video} target="_blank" rel="noopener noreferrer">
-  Go to Watch Movie
-</a>
+      
     {/* <Link to={pathname: `${movie.video}`} >
 
 
