@@ -1,6 +1,11 @@
 .player-wrapper{
-  // background-color:white;
+  margin : 5px;
+  padding: 10px;
+  background-color: #D3D3D3;
+  border-radius: 5px;
 }
+
+
 .moviecomp{
   background-color:crimson;
   width:200%;
@@ -80,4 +85,20 @@ font-size: 1rem;
 line-height: 1.5;
 border-radius: 0.6rem;
 transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .player-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+
+    // Adjusting wrapper styles for smaller screens
+    margin: 5px 0;
+  }
+  
+  // Making images and other components more responsive
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
 }

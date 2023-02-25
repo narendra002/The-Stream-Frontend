@@ -1,49 +1,80 @@
+$row-background-color: rgb(0, 0, 0);
+$row-padding: 1rem;
+$row-heading-padding-left: 20px;
+$row-heading-font-weight: 400;
+$row-images-padding-top: 17px;
+$row-images-padding-left: 10px;
+$row-images-width: 100%;
+$row-images-object-fit: cover;
+$row-images-overflow-x: auto;
+$row-images-scrollbar-display: none;
 
-.row{
-background-color:rgb(0,0,0);
-  padding:1rem;
- 	// width:100%;
-  
-  >h2{
-    padding-left :20px;
-	
-    font-weight:400;
-		// background:blue;
+$card-margin: 0.5rem;
+$card-width: 200px;
+$card-cursor: pointer;
+$card-border-radius: 10px;
+$card-transition: transform 0.5s;
+$card-height: 250px;
+$card-hover-transform: translateY(-10px) scale(1.1);
+
+$row-height: auto;
+
+.maincard {
+  position: relative;
+  background-color: rgb(0, 0, 4);
+}
+
+.row {
+  background-color: $row-background-color;
+  padding: $row-padding;
+
+  > h2 {
+    padding-left: $row-heading-padding-left;
+    font-weight: $row-heading-font-weight;
   }
+
+  > div {
+    display: flex;
+    padding-top: $row-images-padding-top;
+    padding-left: $row-images-padding-left;
+    width: $row-images-width;
+    object-fit: $row-images-object-fit;
+    overflow-x: $row-images-overflow-x;
+
+    &::-webkit-scrollbar {
+      display: $row-images-scrollbar-display;
+    }
+
+    .card {
+      margin: $card-margin;
+      width: $card-width;
+      cursor: $card-cursor;
+      border-radius: $card-border-radius;
+      transition: $card-transition;
+      height: $card-height;
+      object-fit: cover;
+
+      &:hover {
+        transform: $card-hover-transform;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    > div {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  
+  @media only screen and (max-width: 576px) {
+    > h2 {
+      font-size: 1.5rem;
+    }
     
-  >div{ 
-    display:flex;
-  	padding-top :17px;
-		padding-left:10px;
-		width:100%;
-		object-fit: cover;
-    overflow-x: auto;
-     &::-webkit-scrollbar { 
-    display: none;
-  }	
+    .card {
+      width: 150px;
+      height: 200px;
+    }
   }
-}
-.card{
-  
-  margin:0.5rem;
-  width:200px;
-  cursor:pointer;
-  border-radius:10px;
-
-  transition:transform 0.5s;
-  height:250px;
-
-  object-fit: cover;
-  
-  &:hover{
-    transform: translateY(-10px) scale(1.1);
-  }
-	
-}
-.maincard{
-  position:relative;
-  background-color:rgb(0, 0, 4);;
-}
-.info{
-  // margin-bottom:200px;
 }
