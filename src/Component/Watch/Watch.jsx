@@ -25,7 +25,7 @@ const Watch =()=>{
   
   const location=useLocation();
   const { tvShow } = location.state;
-console.log(tvShow);
+// console.log(tvShow);
 
   	const upcoming =MoviesApi(UpcomingMovies);
 	const Popular =MoviesApi(PopularMovies);

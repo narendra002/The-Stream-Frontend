@@ -6,7 +6,7 @@ const TvShowDescription =()=>{
 
   const location=useLocation();
   const { tvShow } = location.state;
-console.log(tvShow);
+// console.log(tvShow);
     const navigate = useNavigate();
 
    const navigateHome = () => {

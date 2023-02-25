@@ -6,7 +6,7 @@ const Moviedescription =()=>{
 
   const location=useLocation();
   const { movie } = location.state;
-console.log(movie);
+// console.log(movie);
     const navigate = useNavigate();
 
    const navigateHome = () => {

@@ -13,9 +13,9 @@ const Player=()=> {
 	const Popular =MoviesApi(PopularMovies);
   const location=useLocation();
   const { movie } = location.state;
-console.log(movie);
+// console.log(movie);
 const { tvShow } = location.state;
-console.log(tvShow);
+// console.log(tvShow);
 
   
   return(
