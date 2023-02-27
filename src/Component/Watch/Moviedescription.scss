@@ -1,99 +1,87 @@
-.Moviedescription{
-  // border-radius:15px;
-  padding:30px;
-  background-color:#0E1525;
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  >h1{
-    margin-bottom:15px;
+.Moviedescription {
+  padding: 30px;
+  background-color: #0e1525;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  > h1 {
+    margin-bottom: 15px;
   }
-  >.Dec_pera{
+
+  > .date {
+    margin-top: 15px;
+  }
+
+  > .Dec_pera {
     overflow-y: scroll;
-    // background-color:blue;
-    margin-top:15px;
-    height:400px;
-
+    margin-top: 15px;
+    height: 300px;
   }
-  >h{
-    margin-top:15px;
-  }
-}
 
-.Dec_pera::-webkit-scrollbar{
-    display: none;
-}
-.viewdetail{
-    width:100%;
-    padding: 10px 40px 10px 40px ;
-    background-color:red;
+  .viewdetail {
+    width: 100%;
+    padding: 10px 40px;
+    background-color: red;
     border-radius: 25px;
     transform: 25px;
- 
-  
-}
+  }
 
-.viewdetail:hover{
-    // transform: translateY(-5px) scale(1);
+  .viewdetail:hover {
     transition: all 0.5s ease-in-out;
-    cursor:pointer;          
-}
-.Reaction{
-  margin-top:30px;
-  border-radius:20px;
-  align-items:center;
-  background-color: #192841;
-  display:flex;
-  flex-direction:row;
-  padding:10px;
-  justify-content:center;
-  width:100%;
-  height:60px;
-  font-size:25px;
-  transition: all 1.5s ease-in-out;
-  >.Exl:hover{
+    cursor: pointer;
+  }
 
-        cursor:pointer;
+  .Reaction {
+    margin-top: 30px;
+    border-radius: 20px;
+    align-items: center;
+    background-color: #192841;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    font-size: 25px;
+    transition: all 1.5s ease-in-out;
+
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+
+      &:hover {
+        cursor: pointer;
         transform: translateY(-5px) scale(1);
         transition: all 0.2s ease-in-out;
-  }
-  >.normal:hover{
+      }
 
-        cursor:pointer;
-        transform: translateY(-5px) scale(1);
-        transition: all 0.2s ease-in-out;
-  }
-   >.bad:hover{
-        cursor:pointer;
-        transform: translateY(-5px) scale(1);
-        transition: all 0.2s ease-in-out;
+      &.Exl {
+        background-color: #192841;
+      }
 
+      &.normal {
+        background-color: #152238;
+      }
+
+      &.bad {
+        background-color: #192841;
+      }
+
+      > h {
+        &.emoji {
+          margin: 0;
+        }
+      }
+    }
   }
-  >.Exl{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    height:100%;
-    width:100%;
-    background-color:#192841
-  }
-  >.normal{
-     display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-     height:100%;
-    width:100%;
-    background-color:#152238;
-  }
-  .bad{
-     display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-     height:100%;
-    width:100%;
-     background-color:#192841;
+
+  /* Hide scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
   }
 }

@@ -1,21 +1,31 @@
-.list{
-  width:100%;
+.list {
+  width: 100%;
   height: 80%;
-  overflow-y: scroll;  
- // background-color:greenyellow;
+  overflow-y: scroll;
 
-  >ol{
-    padding:50px;
+  > ol {
+    padding: 50px;
 
-    >li{
-      padding:10px;
-      font-size:16px;
-      width:100%;
-      // background-color:mediumslateblue;
+    > li {
+      width: 100%;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #E6F4EA; /* Set the background color to a light green color */
+      color: #4C4C4C; /* Set the font color to a dark gray color */
+
+      transition: box-shadow 0.2s ease-in-out;
+
+      &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
     }
-    
   }
-}
-.list::-webkit-scrollbar{
+
+  // Hide scrollbar on webkit browsers
+  &::-webkit-scrollbar {
     display: none;
+  }
 }

@@ -22,14 +22,13 @@ const { tvShow } = location.state;
 
     <div className='moviecomp'>
       <div className='player-wrapper'>
-       <ReactPlayer
-              className='react-player'
-       
-            playing url ={tvShow.trailer}
-              controls
-				    	width='100%'
-              height="400px"
-              />
+      <ReactPlayer
+        className='react-player'
+        url={tvShow.trailer}
+        width='100%'
+        height='100%'
+        controls={true}
+      />
 
 
  
