@@ -7,9 +7,8 @@ import "video-react/dist/video-react.css";
 
 import List from "./List.jsx";
 import Player from "./Player.jsx";
-import TvShowDescription from "./TvShowDescription.jsx"
 import Comment from "./Comment.jsx"
-
+import Moviedescription from './Moviedescription';
 import Row from "../Row/Row.jsx"
 import axios from "axios"
 const API_KEY = '4008ea8497eda5d3e80f32017f7d35bc';
@@ -25,7 +24,7 @@ const Watch =()=>{
   
   const location=useLocation();
   const Searchdata  = location.state;
-console.log(Searchdata);
+// console.log(Searchdata);
 
   	const upcoming =MoviesApi(UpcomingMovies);
 	const Popular =MoviesApi(PopularMovies);
@@ -41,8 +40,8 @@ console.log(Searchdata);
     {/* <List/> */}
     {/* <div>{location.state.name}</div> */}
     <Player/>
-    <TvShowDescription/>
-    {/* <Moviedescription/> */}
+
+    <Moviedescription/>
     {/* <a href={tvShow.trailer} target="_blank" rel="noopener noreferrer">
   Go to Watch TvShow
 </a> */}

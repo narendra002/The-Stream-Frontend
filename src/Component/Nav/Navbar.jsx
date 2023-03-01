@@ -12,16 +12,25 @@ const Navbar = () => {
 
   const fetchSearchSuggestions = async (searchValue) => {
     try {
-      const response = await axios.get('http://127.0.0.1:4000/movie/');
-      const suggestions = response.data.filter((movie) =>
+      const movieResponse = await axios.get(`http://127.0.0.1:4000/movie/`);
+      const movieSuggestions = movieResponse.data.filter((movie) =>
         movie.title.toLowerCase().includes(searchValue.toLowerCase())
       ).slice(0, 3);
-      setSuggestions(suggestions);
+  
+      const tvShowResponse = await axios.get(`http://127.0.0.1:4000/tvShow/`);
+      const tvShowSuggestions = tvShowResponse.data.filter((tvShow) =>
+        tvShow.title.toLowerCase().includes(searchValue.toLowerCase())
+      ).slice(0, 3);
+  
+     
+  
+      const allSuggestions = [...movieSuggestions, ...tvShowSuggestions, ];
+      setSuggestions(allSuggestions);
     } catch (error) {
       console.error(error);
     }
   };
-
+  
   const renderSuggestion = (suggestion) => <div>{suggestion.title}</div>;
 
   const onSuggestionsFetch = ({ value }) => {

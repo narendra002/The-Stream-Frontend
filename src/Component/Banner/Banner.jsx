@@ -23,10 +23,10 @@ const Banner = ({ BannerType }) => {
 				<br></br>
 				<h3 className="Banner_description">{BannerType.overview}</h3>
 				<div className='BannerButton'>
-				<Link to={"/watch/"+BannerType._id} state={{tvShow:BannerType}}> 
-           <button className='watchnow'>▶ Watch Now</button>
-          </Link>	
-			
+					<Link to={"/watch/" + BannerType._id} state={{ tvShow: BannerType }}>
+						<button className='watchnow'>▶ Watch Now</button>
+					</Link>
+
 					<button className='Detail'>Detail</button>
 				</div>
 			</div>
