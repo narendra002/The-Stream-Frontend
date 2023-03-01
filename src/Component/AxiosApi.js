@@ -46,6 +46,15 @@ const [Movies, setMovies] = useState([]);
 	return Movies;
 
 }
+export const searchMovies = async (searchTerm) => {
+	try {
+	  const response = await axios.get(`${url1}/search/${searchTerm}`);
+	  return response.data;
+	} catch (error) {
+	  console.error(error);
+	  throw new Error('Failed to search movies');
+	}
+  };
 export const MovieApi=(TypeMovies)=>{
 	const [Movies, setMovies] = useState([]);
 		useEffect(()=>{
@@ -89,6 +98,7 @@ const [TvShows, setTvShows] = useState([]);
 	return TvShows;
 
 }
+
 
   const AxiosApi = (UpcomingMovies) => {
 const [upcoming, setUpcoming] = useState([]);

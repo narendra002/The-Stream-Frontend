@@ -1,229 +1,8 @@
 
 
- @import url('https://fonts.googleapis.com/css2?family=Kenia&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gloria+Hallelujah&family=Josefin+Sans:wght@300&family=Kanit:wght@100&family=Monoton&family=Montserrat:wght@900&family=Playfair+Display:ital,wght@1,600&display=swap');
- .header{
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  opacity: 1;
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-background: linear-gradient(to bottom, #000, transparent);
- }
-
- .header {
-   >h {
-
-     font-size: 25px;
-     color: white;
-     font-weight: 1000;
-     font-family: 'Kenia', cursive;
-
-     font-family: 'Black Ops One', cursive;
-     font-family: 'Gloria Hallelujah', cursive;
-     font-family: 'Josefin Sans', sans-serif;
-     font-family: 'Kanit', sans-serif;
-     font-family: 'Monoton', cursive;
-     font-family: 'Montserrat', sans-serif;
-
-   }
-
-   >div {
-    // background-color: black;
-     margin: auto;
-     align-content: center;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     padding-left: 100px;
-
-     >ul {
-
-       >li {
-
-         >a {
-           position: relative;
-           z-index: 1;
-
-           &:before {
-             transform: all .5s;
-           }
-
-           &:after {
-             display: block;
-             position: absolute;
-             top: 0;
-             left: 0;
-             bottom: 0;
-             right: 0;
-             margin: auto;
-             width: 100%;
-             height: 1px;
-             content: '.';
-             color: transparent;
-             background: #F1C40F;
-             visibility: none;
-             opacity: 0;
-             z-index: -1;
-             border-radius: 5px;
-           }
-
-           &:hover {
-             color: black;
-           }
-
-           &:hover:after {
-             opacity: 1;
-             visibility: visible;
-             height: 100%;
-           }
-         }
-       }
-     }
-
-     >div {
-       position: absolute;
-       top: 25px;
-
-       right: 16px;
-       padding: 10px;
-
     
 
 
-       >svg {
-         color: white;
-         float: right;
-         font-size: 1.8rem;
-         padding: 30px;
-         cursor: pointer;
-
-         &:hover {
-           color: black;
-
-         }
-       }
-     }
-   }
- }
-
-
-
- nav {
-   width: auto;
-   margin: 0 auto;
-   background: black;
-   padding: 40px;
-
- }
-
- nav ul {
-   list-style: none;
-   text-align: center;
-
- }
-
- nav ul li {
-
-   display: inline-block;
- }
-
- nav ul li a {
-   display: block;
-   padding: 10px;
-   text-decoration: none;
-   color: whitesmoke;
-   font-weight: 800;
-   text-transform: uppercase;
-   margin: 0 10px;
- }
-
- nav ul li a,
- nav ul li a:after,
- nav ul li a:before {
-   transition: all .5s;
- }
-
- nav ul li a:hover {
-   color: black;
- }
- 
-
- .line{
-  display: flex;
-  justify-content: center;
-  align-items: center;
- }
-
-
-
-
-.container {
-  display: block;
-  max-width: 10px;
-  margin: auto;
-}
-
-.search-container {
-  overflow: hidden;
-  float: right;
-  height: 4em;
-  width: 2em;
-  border-radius: 15px;
-  box-shadow: 0 0 5px #6A5D4F;
-  -moz-transition: all 0.35s;
-  -webkit-transition: all 0.35s;
-}
-.search-container:hover, .search-container:focus, .search-container:focus-within {
-  width: 25em;
-  height: 50px;
-  border-radius: 15px;
-  outline: none;
-  background-color: blueviolet;
-}
-.search-container:hover input, .search-container:focus input, .search-container:focus-within input {
-  display: inline-block;
-  width: 19em;
-  height: fit-content;
-  // padding: 10px;
-}
-
-input {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  float: left;
-  width: 0em;
-  height: 2em;
-  margin: 1em;
-  margin-right: -4.5em;
-  background: #fff;
-  color: #6A5D4F;
-  font-size: 1em;
-  font-weight: 600;
-  padding: 0px;
-  border: 0;
-  border-radius: 5px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  -moz-transition: all 0.25s;
-  -webkit-transition: all 0.25s;
-}
-input:focus {
-  outline: none;
-  box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.25), 0 1px 5px rgba(0, 0, 0, 0.15);
-}
-
-
-.button:active {
-  border: 0 !important;
-  text-shadow: 0 0 0;
-}
-.button i {
-  font-size: 85%;
-}
 
 
 
@@ -231,33 +10,41 @@ input:focus {
 
 
 
-$header-height: 70px;
 
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Kenia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gloria+Hallelujah&family=Josefin+Sans:wght@300&family=Kanit:wght@100&family=Monoton&family=Montserrat:wght@900&family=Playfair+Display:ital,wght@1,600&display=swap');
 .header {
   display: flex;
   justify-content: space-evenly;
-  flex-direction: row;
+  align-items: center;
   opacity: 1;
   position: fixed;
-  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1;
   background: linear-gradient(to bottom, #000, transparent);
-  height: $header-height;
+  /* Added top, left, and right properties to fix the navbar to the top of the page */
+}
 
+.header {
   >h {
+
     font-size: 25px;
     color: white;
     font-weight: 1000;
-    font-family: 'Kenia', cursive;
-    font-family: 'Black Ops One', cursive;
-    font-family: 'Gloria Hallelujah', cursive;
-    font-family: 'Josefin Sans', sans-serif;
-    font-family: 'Kanit', sans-serif;
-    font-family: 'Monoton', cursive;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Kenia", cursive;
+
   }
 
   >div {
+   // background-color: black;
     margin: auto;
     align-content: center;
     display: flex;
@@ -266,12 +53,9 @@ $header-height: 70px;
     padding-left: 100px;
 
     >ul {
-      display: flex;
-      list-style: none;
-      justify-content: space-between;
-      width: 100%;
 
       >li {
+
         >a {
           position: relative;
           z-index: 1;
@@ -315,8 +99,12 @@ $header-height: 70px;
     >div {
       position: absolute;
       top: 25px;
+
       right: 16px;
       padding: 10px;
+
+   
+
 
       >svg {
         color: white;
@@ -327,26 +115,118 @@ $header-height: 70px;
 
         &:hover {
           color: black;
+
         }
       }
     }
   }
 }
 
-@media only screen and (max-width: 600px) {
-  $header-height: 50px;
 
-  .header {
-    >div {
-      padding-left: 50px;
 
-      >ul {
-        flex-direction: column;
+nav {
+  width: auto;
+  margin: 0 auto;
+  background: black;
+  padding: 40px;
 
-        >li {
-          margin-bottom: 10px;
-        }
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+
+}
+
+nav ul li {
+
+  display: inline-block;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+
+nav ul li a:hover {
+  color: black;
+}
+
+
+.line{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+
+
+
+
+
+
+.container {
+  position: relative;
+  
+
+  input {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    outline: none;
+    color: #333;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  .react-autosuggest__suggestions-list {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-radius: 10px;
+
+    li {
+      padding: 10px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 10px;
+      margin-right: 10px; 
+      &:hover {
+        background-color: #F1C40F;
+        transform: translateY(-3px);
+        box-shadow: 0px 6px 15px rgba(8, 8, 8, 0.2);
       }
     }
   }
 }
+
+
+
+
+
+

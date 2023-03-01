@@ -9,17 +9,18 @@ const PopularMovies="popular";
 const TopRatedMovies="top_rated";
 const UpcomingMovies="upcoming";
  const imgUrl="https://image.tmdb.org/t/p/original";
-import {MoviesApi,BannerApi} from '../Component/AxiosApi';
+import {MovieApi,BannerApi} from '../Component/AxiosApi';
 import Banner from "../Component/Banner/Banner.jsx";
 
 const Home = () => {
 	
 	
 
-	const upcoming =MoviesApi(UpcomingMovies);
-	const Popular =MoviesApi(PopularMovies);
+	const upcoming =MovieApi();
+	const Popular =MovieApi();
 	
-	const TopRated=MoviesApi(TopRatedMovies);
+	const TopRated=MovieApi();
+
 
 	const TopRatedBanner=BannerApi(TopRatedMovies);
 

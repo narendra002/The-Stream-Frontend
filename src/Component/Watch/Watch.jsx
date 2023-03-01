@@ -24,8 +24,8 @@ import { useLocation } from 'react-router-dom';
 const Watch =()=>{
   
   const location=useLocation();
-  const { tvShow } = location.state;
-// console.log(tvShow);
+  const Searchdata  = location.state;
+console.log(Searchdata);
 
   	const upcoming =MoviesApi(UpcomingMovies);
 	const Popular =MoviesApi(PopularMovies);
@@ -37,9 +37,9 @@ const Watch =()=>{
     <>
     <div className='parentdiv'>
 		<div className='watchmain'>
-    
-    <List/>
-    
+    {/* <div>{location.state.title}</div> */}
+    {/* <List/> */}
+    {/* <div>{location.state.name}</div> */}
     <Player/>
     <TvShowDescription/>
     {/* <Moviedescription/> */}
@@ -47,7 +47,7 @@ const Watch =()=>{
   Go to Watch TvShow
 </a> */}
     </div>
-          <Comment/>
+          {/* <Comment/> */}
 
           {/* <Row title={"Popular Movies"} arr={Popular}/> */}
           {/* <Row title={"Top Rated"} arr={TopRated}/> */}

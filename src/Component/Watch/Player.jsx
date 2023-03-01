@@ -16,7 +16,7 @@ const Player=()=> {
 // console.log(movie);
 const { tvShow } = location.state;
 // console.log(tvShow);
-
+const Searchdata  = location.state;
   
   return(
 
