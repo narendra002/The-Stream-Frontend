@@ -9,10 +9,10 @@ const Moviedescription =()=>{
   // console.log(movie.desc);
   const navigate = useNavigate();
   const Searchdata  = location.state;
-  const OverView = tvShow?.overview || Searchdata?.desc ||movie?.desc;
+  const OverView = tvShow?.overview || Searchdata?.desc ||movie?.desc||Searchdata?.overview;
   const Title = tvShow?.title || Searchdata?.title||movie?.title;
-  const Air = tvShow?.first_air_date || Searchdata?.first_air_date||movie?.first_air_date;
-
+  const Air = tvShow?.first_air_date || Searchdata?.first_air_date||movie?.first_air_date|| Searchdata?.releaseYear;
+const genre=Searchdata?.genree;
   const navigateHome = () => {
     navigate('/MovieMain');
   };
@@ -20,6 +20,7 @@ const Moviedescription =()=>{
   return (
     <div className='Moviedescription'>
       <h1>{Title}</h1>
+      <h className='date'>{genre}</h>
       <h className='date'>{Air}</h>
       <p className='Dec_pera'>{OverView}</p>
       <button className='viewdetail' onClick={navigateHome}>

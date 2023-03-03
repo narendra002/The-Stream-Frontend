@@ -22,9 +22,13 @@ const Navbar = () => {
         tvShow.title.toLowerCase().includes(searchValue.toLowerCase())
       ).slice(0, 3);
   
-     
+      const AnimeResponse = await axios.get(`http://127.0.0.1:4000/anime/`);
+      const AnimeSuggestions = AnimeResponse.data.filter((anime) =>
+        anime.title.toLowerCase().includes(searchValue.toLowerCase())
+      ).slice(0, 3);
   
-      const allSuggestions = [...movieSuggestions, ...tvShowSuggestions, ];
+  
+      const allSuggestions = [...movieSuggestions, ...tvShowSuggestions, ...AnimeSuggestions ];
       setSuggestions(allSuggestions);
     } catch (error) {
       console.error(error);

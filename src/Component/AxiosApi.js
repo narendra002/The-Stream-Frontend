@@ -71,6 +71,20 @@ export const MovieApi=(TypeMovies)=>{
 		return Movies;
 	
 	}
+	export const AnimeApi = () => {
+		const [animes, setAnimes] = useState([]);
+	  
+		useEffect(() => {
+		  const fetchAnimes = async () => {
+			const res = await axios.get(`${url1}/anime`);
+			setAnimes(res.data);
+		  };
+	  
+		  fetchAnimes();
+		}, []);
+	  
+		return animes;
+	  };
 	export const TvShowApi=(TypeTvShows)=>{
 		const [TvShows, setTvShows] = useState([]);
 	useEffect(()=>{
