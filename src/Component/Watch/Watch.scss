@@ -19,3 +19,20 @@
   justify-content:space-around;;
 }
 
+button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0069d9;
+}
+
+a {
+  text-decoration: none;
+}

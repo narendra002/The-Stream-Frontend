@@ -4,7 +4,7 @@ import "video-react/dist/video-react.css";
 // import Home from ".../Home/Home.jsx";
 
 // import Banner from"../Banner/Banner.jsx"
-
+// import VideoDownloader from './VideoDownloader';
 import List from "./List.jsx";
 import Player from "./Player.jsx";
 import Comment from "./Comment.jsx"
@@ -30,7 +30,7 @@ const Watch =()=>{
 	const Popular =MoviesApi(PopularMovies);
 	
 	const TopRated=MoviesApi(TopRatedMovies);
-
+  
 
   return (
     <>
@@ -42,6 +42,11 @@ const Watch =()=>{
     <Player/>
 
     <Moviedescription/>
+    
+    {/* <VideoDownloader videoUrl={Searchdata.trailer} /> */}
+    {/* <a href={Searchdata.trailer} download>
+          <button>Download Video</button>
+        </a> */}
     {/* <a href={tvShow.trailer} target="_blank" rel="noopener noreferrer">
   Go to Watch TvShow
 </a> */}

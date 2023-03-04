@@ -1,35 +1,46 @@
-import React from 'react'
-import './MovieMain.scss'
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import './MovieMain.scss';
+
 const MovieMain = () => {
-  return(
-    <>
-    <div className='MainMovie'>
-      <div className='imgandinfo'>
-          <div className=''>
-           <img className ="posterImg" src="https://www.joblo.com/wp-content/uploads/2014/09/interstellar_water-1.jpg"/>
+  const location = useLocation();
+  const { tvShow } = location.state;
+
+  const navigate = useNavigate();
+
+  const handleWatch = () => {
+    navigate(`/watch/${tvShow._id}`, { state: { tvShow } });
+  };
+
+  return (
+    <div className="MainMovie">
+      <div className="imgandinfo">
+        <div className="">
+          <img className="posterImg" src={tvShow.poster_path} />
         </div>
-      <div className='movieInfo'>
-          <h className='year'>2023</h>
-          <h className='MovieName'>INTERSTELLER</h>
-          <div className='genres'>
+        <img className="movie-backdrop" src={tvShow.backdrop_path} />
+        <div className="movieInfo">
+          <h className="MovieName">{tvShow.title}</h>
+          <h className="year">{tvShow.first_air_date}</h>
+          <div className="genres">
             <ul>
-             <li>horrer </li>
-              <li>Drama </li>
+              <li>{tvShow.genre} </li>
             </ul>
           </div>
-        <p className='decription'>When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans. </p>
-        <div className='duration_imdb'>
-          <h> 🕥 1:12:21</h>
-          <h> IMDB 9/10</h>
+          <p className="decription">{tvShow.overview} </p>
+          <div className="duration_imdb">
+            <h>Duration :{tvShow.duration} Min </h>
+          </div>
+          <div className="Button">
+            <button className="watchnow" onClick={handleWatch}>
+              {" "}
+              ▶ Watch Trailer
+            </button>
+          </div>
         </div>
-        <div className='Button'>
-           <button className='watchnow'>▶ watch trailer</button>
-           <button className='readmore'>Read more</button>
-        </div>
-      </div>
       </div>
     </div>
-    </>
-  ) 
-}
-export default MovieMain;  
+  );
+};
+
+export default MovieMain;

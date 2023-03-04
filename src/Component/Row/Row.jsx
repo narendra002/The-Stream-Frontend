@@ -16,7 +16,7 @@ const Row = ({title, arr = []}) => {
       <h2>{title}</h2>
       <div>
         {arr.map((item) => (
-          <Link to={"/watch/"+item._id} state={{tvShow:item}}> 
+          <Link to={"/MovieMain/"} state={{tvShow:item}}> 
             <Card key={item._id} poster={ item.poster_path}/>
           </Link>
         ))}
