@@ -1,7 +1,7 @@
 import axios from "axios"
 const API_KEY = '4008ea8497eda5d3e80f32017f7d35bc';
 const url = "https://api.themoviedb.org/3";
-const url1 = "http://127.0.0.1:4000";
+const url1 = "https://the-stream-backend.vercel.app/";
 import React, { useState, useEffect } from 'react';
 export const BannerApi=(TypeBanner)=>{
 const [Banner, setBanner] = useState([]);
