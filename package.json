@@ -19,7 +19,7 @@
     "dispatch": "^1.0.2",
     "express": "^4.18.2",
     "firebase-tools": "^11.25.2",
-    "netlify-cli": "^13.2.1",
+   
     "node": "^19.3.0",
     "node-modules": "^1.0.1",
     "prop-types": "^15.8.1",
