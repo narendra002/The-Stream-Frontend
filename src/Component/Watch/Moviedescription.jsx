@@ -26,7 +26,7 @@ const Moviedescription = () => {
   const cancelTokenRef = useRef(null);
 
   const downloadVideo = () => {
-    window.location.href=`http://127.0.0.1:4000/download?url=${Trailer}`;
+    window.location.href=`https://the-stream-backend.vercel.app/download?url=${Trailer}`;
 
   };
   

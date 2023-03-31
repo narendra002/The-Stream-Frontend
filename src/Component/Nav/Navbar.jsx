@@ -12,17 +12,17 @@ const Navbar = () => {
 
   const fetchSearchSuggestions = async (searchValue) => {
     try {
-      const movieResponse = await axios.get(`http://127.0.0.1:4000/movie/`);
+      const movieResponse = await axios.get(`https://the-stream-backend.vercel.app/movie/`);
       const movieSuggestions = movieResponse.data.filter((movie) =>
         movie.title.toLowerCase().includes(searchValue.toLowerCase())
       ).slice(0, 3);
   
-      const tvShowResponse = await axios.get(`http://127.0.0.1:4000/tvShow/`);
+      const tvShowResponse = await axios.get(`https://the-stream-backend.vercel.app/tvShow/`);
       const tvShowSuggestions = tvShowResponse.data.filter((tvShow) =>
         tvShow.title.toLowerCase().includes(searchValue.toLowerCase())
       ).slice(0, 3);
   
-      const AnimeResponse = await axios.get(`http://127.0.0.1:4000/anime/`);
+      const AnimeResponse = await axios.get(`https://the-stream-backend.vercel.app/anime/`);
       const AnimeSuggestions = AnimeResponse.data.filter((anime) =>
         anime.title.toLowerCase().includes(searchValue.toLowerCase())
       ).slice(0, 3);
