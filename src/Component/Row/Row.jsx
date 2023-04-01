@@ -5,7 +5,7 @@ import { AiFillCloseCircle, AiOutlineArrowLeft, AiOutlineArrowRight } from 'reac
 
 const Row = ({ title, arr = [] }) => {
   const [start, setStart] = useState(0);
-  const [end, setEnd] = useState(5);
+  const [end, setEnd] = useState(8);
   const rowRef = useRef(null);
 
   const handleScroll = () => {
