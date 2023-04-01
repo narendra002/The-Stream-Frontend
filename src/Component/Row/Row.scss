@@ -78,3 +78,22 @@ $row-height: auto;
     }
   }
 }
+
+.arrow-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #ccc;
+    background-color: black;
+  }
+}
