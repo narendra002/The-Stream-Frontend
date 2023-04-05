@@ -6,7 +6,7 @@ $row-images-padding-top: 17px;
 $row-images-padding-left: 10px;
 $row-images-width: 100%;
 $row-images-object-fit: cover;
-$row-images-overflow-x: auto;
+$row-images-overflow-x: hidden;
 $row-images-scrollbar-display: none;
 
 $card-margin: 0.5rem;
@@ -27,6 +27,7 @@ $row-height: auto;
 .row {
   background-color: $row-background-color;
   padding: $row-padding;
+  overflow: hidden;
 
   > h2 {
     padding-left: $row-heading-padding-left;
@@ -39,7 +40,8 @@ $row-height: auto;
     padding-left: $row-images-padding-left;
     width: $row-images-width;
     object-fit: $row-images-object-fit;
-    overflow-x: $row-images-overflow-x;
+    overflow: $row-images-overflow-x;
+    
 
     &::-webkit-scrollbar {
       display: $row-images-scrollbar-display;

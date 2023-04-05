@@ -1,24 +1,5 @@
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Kenia&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gloria+Hallelujah&family=Josefin+Sans:wght@300&family=Kanit:wght@100&family=Monoton&family=Montserrat:wght@900&family=Playfair+Display:ital,wght@1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kenia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gloria+Hallelujah&family=Josefin+Sans:wght@300&family=Kanit:wght@100&family=Monoton&family=Montserrat:wght@900&family=Playfair+Display:ital,wght@1,600&display=swap");
 .header {
   display: flex;
   justify-content: space-evenly;
@@ -34,17 +15,15 @@
 }
 
 .header {
-  >h {
-
+  > h {
     font-size: 25px;
     color: white;
     font-weight: 1000;
     font-family: "Kenia", cursive;
-
   }
 
-  >div {
-   // background-color: black;
+  > div {
+    // background-color: black;
     margin: auto;
     align-content: center;
     display: flex;
@@ -52,16 +31,14 @@
     align-items: center;
     padding-left: 100px;
 
-    >ul {
-
-      >li {
-
-        >a {
+    > ul {
+      > li {
+        > a {
           position: relative;
           z-index: 1;
 
           &:before {
-            transform: all .5s;
+            transform: all 0.5s;
           }
 
           &:after {
@@ -74,9 +51,9 @@
             margin: auto;
             width: 100%;
             height: 1px;
-            content: '.';
+            content: ".";
             color: transparent;
-            background: #F1C40F;
+            background: #f1c40f;
             visibility: none;
             opacity: 0;
             z-index: -1;
@@ -96,17 +73,14 @@
       }
     }
 
-    >div {
+    > div {
       position: absolute;
       top: 25px;
 
       right: 16px;
       padding: 10px;
 
-   
-
-
-      >svg {
+      > svg {
         color: white;
         float: right;
         font-size: 1.8rem;
@@ -115,31 +89,25 @@
 
         &:hover {
           color: black;
-
         }
       }
     }
   }
 }
 
-
-
 nav {
   width: auto;
   margin: 0 auto;
   background: black;
   padding: 40px;
-
 }
 
 nav ul {
   list-style: none;
   text-align: center;
-
 }
 
 nav ul li {
-
   display: inline-block;
 }
 
@@ -156,30 +124,21 @@ nav ul li a {
 nav ul li a,
 nav ul li a:after,
 nav ul li a:before {
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 nav ul li a:hover {
   color: black;
 }
 
-
-.line{
- display: flex;
- justify-content: center;
- align-items: center;
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-
-
-
-
-
-
 
 .container {
   position: relative;
-  
 
   input {
     width: 200px;
@@ -215,18 +174,12 @@ nav ul li a:hover {
       display: flex;
       flex-wrap: wrap;
       border-radius: 10px;
-      margin-right: 10px; 
+      margin-right: 10px;
       &:hover {
-        background-color: #F1C40F;
+        background-color: #f1c40f;
         transform: translateY(-3px);
         box-shadow: 0px 6px 15px rgba(8, 8, 8, 0.2);
       }
     }
   }
 }
-
-
-
-
-
-

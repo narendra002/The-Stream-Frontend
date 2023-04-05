@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Row.scss';
 import { Link } from 'react-router-dom';
-import { AiFillCloseCircle, AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import {  AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import { FixedSizeList } from 'react-window';
+
+const Card = ({ poster }) => (
+  <div className='maincard'>
+    <img className='card' src={poster} alt='cover' />
+  </div>
+);
 
 const Row = ({ title, arr = [] }) => {
   const [start, setStart] = useState(0);
@@ -15,45 +22,54 @@ const Row = ({ title, arr = [] }) => {
 
     if (atBottom && end < arr.length) {
       const newStart = start + 5;
-      const newEnd = end + 5 > arr.length ? arr.length : end + 5;
+      const newEnd = Math.min(end + 5, arr.length);
       setStart(newStart);
       setEnd(newEnd);
     }
   };
-  
+
   useEffect(() => {
     const element = rowRef.current;
     element.addEventListener('scroll', handleScroll);
-  
+
     return () => {
       element.removeEventListener('scroll', handleScroll);
     };
-  }, [handleScroll]);
+  }, []);
 
-  const Card = ({ poster }) => (
-    <div className='maincard'>
-      <img className='card' src={poster} alt='cover' />
-    </div>
-  );
+  const RowItem = ({ index, style }) => {
+    const item = arr[start + index];
+    return (
+      <Link to={'/MovieMain/'} state={{ tvShow: item }}>
+        <div style={style}>
+          <Card key={item._id} poster={item.poster_path} />
+        </div>
+      </Link>
+    );
+  };
 
   const handlePrev = () => {
     if (start > 0) {
-      setStart((s) => s - 10);
-      setEnd((e) => e - 10);
-      rowRef.current.scrollTo({
+      const newStart = Math.max(start - 10, 0);
+      const newEnd = start;
+      setStart(newStart);
+      setEnd(newEnd);
+      rowRef.current.scrollToItem(start - newStart - 1, {
         behavior: 'smooth',
-        left: rowRef.current.scrollLeft - rowRef.current.offsetWidth,
+        align: 'start',
       });
     }
   };
 
   const handleNext = () => {
     if (end < arr.length) {
-      setStart((s) => s + 10);
-      setEnd((e) => e + 10);
-      rowRef.current.scrollTo({
+      const newStart = end;
+      const newEnd = Math.min(end + 10, arr.length);
+      setStart(newStart);
+      setEnd(newEnd);
+      rowRef.current.scrollToItem(newStart, {
         behavior: 'smooth',
-        left: rowRef.current.scrollLeft + rowRef.current.offsetWidth,
+        align: 'start',
       });
     }
   };
@@ -62,15 +78,22 @@ const Row = ({ title, arr = [] }) => {
     <div className='row' ref={rowRef}>
       <h2>{title}</h2>
 
-      <div>
+      <div >
         <button className='arrow-button' onClick={handlePrev}>
           <AiOutlineArrowLeft />
         </button>
-        {arr.slice(start, end).map((item) => (
-          <Link to={'/MovieMain/'} state={{ tvShow: item }}>
-            <Card key={item._id} poster={item.poster_path} />
-          </Link>
-        ))}
+        <FixedSizeList 
+      
+          height={290}
+          width={1240}
+          itemSize={220}
+          itemCount={arr.length}
+          layout='horizontal'
+     
+        >
+          {RowItem}
+        </FixedSizeList>
+
         <button className='arrow-button' onClick={handleNext}>
           <AiOutlineArrowRight />
         </button>
