@@ -8,7 +8,7 @@
 
 .header {
   display: flex;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
   align-items: center;
   opacity: 1;
   position: fixed;
@@ -34,7 +34,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 6.25rem; /* 100px */
+  padding-left: .30rem; /* 100px */
 
   > ul {
     > li {
@@ -187,5 +187,74 @@ nav ul li a:hover {
         box-shadow: 0px 6px 15px rgba(8, 8, 8, 0.2);
       }
     }
+  }
+}
+
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all 0.5s;
+}
+
+nav ul li a:hover {
+  color: black;
+}
+
+.line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+
+  input {
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    outline: none;
+    color: #333;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  .react-autosuggest__suggestions-list {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-radius: 10px;
+
+    li {
+      padding: 10px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 10px;
+      margin-right: 10px;
+      &:hover {
+        background-color: #f1c40f;
+        transform: translateY(-3px);
+        box-shadow: 0px 6px 15px rgba(8, 8, 8, 0.2);
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header >div{
+margin: 0%;
   }
 }
