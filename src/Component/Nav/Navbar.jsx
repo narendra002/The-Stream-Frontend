@@ -76,7 +76,7 @@ const Navbar = () => {
             <Link to='/Anime'>Anime</Link>
           </li>
           <li>
-            <Link to='/upload'>Upload </Link>
+            <Link to='/watch_list'>Watch List</Link>
           </li>
         </ul>
         <div className='container'>

@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Kenia&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gloria+Hallelujah&family=Josefin+Sans:wght@300&family=Kanit:wght@100&family=Monoton&family=Montserrat:wght@900&family=Playfair+Display:ital,wght@1,600&display=swap");
+
+:root {
+  /* Set a base font size */
+  font-size: 16px;
+}
+
 .header {
   display: flex;
   justify-content: space-evenly;
@@ -14,82 +20,79 @@
   /* Added top, left, and right properties to fix the navbar to the top of the page */
 }
 
-.header {
-  > h {
-    font-size: 25px;
-    color: white;
-    font-weight: 1000;
-    font-family: "Kenia", cursive;
-  }
+.header > h {
+  font-size: 0.9375rem; /* 15px */
+  color: white;
+  font-weight: 1000;
+  font-family: "Kenia", cursive;
+}
 
-  > div {
-    // background-color: black;
-    margin: auto;
-    align-content: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 100px;
+.header > div {
+  /* background-color: black; */
+  margin: auto;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 6.25rem; /* 100px */
 
-    > ul {
-      > li {
-        > a {
-          position: relative;
-          z-index: 1;
+  > ul {
+    > li {
+      > a {
+        position: relative;
+        z-index: 1;
 
-          &:before {
-            transform: all 0.5s;
-          }
-
-          &:after {
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            margin: auto;
-            width: 100%;
-            height: 1px;
-            content: ".";
-            color: transparent;
-            background: #f1c40f;
-            visibility: none;
-            opacity: 0;
-            z-index: -1;
-            border-radius: 5px;
-          }
-
-          &:hover {
-            color: black;
-          }
-
-          &:hover:after {
-            opacity: 1;
-            visibility: visible;
-            height: 100%;
-          }
+        &:before {
+          transform: all 0.5s;
         }
-      }
-    }
 
-    > div {
-      position: absolute;
-      top: 25px;
-
-      right: 16px;
-      padding: 10px;
-
-      > svg {
-        color: white;
-        float: right;
-        font-size: 1.8rem;
-        padding: 30px;
-        cursor: pointer;
+        &:after {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          margin: auto;
+          width: 100%;
+          height: 0.0625rem; /* 1px */
+          content: ".";
+          color: transparent;
+          background: #f1c40f;
+          visibility: none;
+          opacity: 0;
+          z-index: -1;
+          border-radius: 0.3125rem; /* 5px */
+        }
 
         &:hover {
           color: black;
         }
+
+        &:hover:after {
+          opacity: 1;
+          visibility: visible;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  > div {
+    position: absolute;
+    top: 1.5625rem; /* 25px */
+    right: 1rem; /* 16px */
+    padding: 0.625rem; /* 10px */
+
+    > svg {
+      color: white;
+      float: right;
+      font-size: 1.8rem;
+      padding: 1.875rem; /* 30px */
+      cursor: pointer;
+
+      &:hover {
+        color: black;
       }
     }
   }
@@ -99,7 +102,7 @@ nav {
   width: auto;
   margin: 0 auto;
   background: black;
-  padding: 40px;
+  padding: 2.5rem; /* 40px */
 }
 
 nav ul {
@@ -113,13 +116,16 @@ nav ul li {
 
 nav ul li a {
   display: block;
-  padding: 10px;
+  padding: 0.625rem; /* 10px */
   text-decoration: none;
   color: whitesmoke;
   font-weight: 800;
   text-transform: uppercase;
-  margin: 0 10px;
+  margin: 0 0.625rem; /* 10px */
 }
+
+
+
 
 nav ul li a,
 nav ul li a:after,

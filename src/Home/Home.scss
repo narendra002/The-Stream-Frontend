@@ -1,147 +1,115 @@
-$bg:rgb(0, 0, 4);
-.banner{
-  height:600px;
-  background-color:$bg; 	
-	background-size:cover;
-	background-repeat:no-repeat;
-	position:relative;
-&:after{
+:root {
+  /* Set a base font size */
+  font-size: 92.5%;
+}
 
-//   background: #030303;
-// background: radial-gradient(circle,rgba(255, 87, 51,0) 0,rgba(8,41,44,.8) 50%,#030303 80%);
-	background: rgb(34,193,195);
-background: linear-gradient(265deg, transparent 43%, black 84%);
+@media only screen and (max-width: 768px) {
+  :root {
+    /* Set a base font size */
+    font-size: 40%;
+  }
+}
 
-	content:"";
-	
-	width:100%;
-	height:100%;
-	position:absolute;
-	// background:$bg;
-	// opacity:0.4;
+.banner {
+  height: 40rem;
+  background-color: rgb(0, 0, 4);
+  background-size: cover; /* Scale the background image to cover the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat;
+  position: relative;
 }
+
+.banner:after {
+  background: linear-gradient(265deg, transparent 43%, black 84%);
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
- .Banner_content{
-	position:absolute;
-	margin-left:20px;
-  // background-color:red;
-	 
-  top: 45%;
-  width: 40%;
-  // text-align: center;
-  // font-size: 18px;
-	}
-.Banner_title{
-	float:left;
-	margin-left:7.8%;
-	// background:red;
-	// position:relative;
-	white-space: nowrap;
-	font-weight: 600;
-	font-size:30px;
-  // background-color:red;
-    margin-bottom: 100px;
- //    max-height: 132px;
- //    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-	-webkit-tap-highlight-color:transparent;
+
+.Banner_content {
+  position: absolute;
+  margin-left: 2%;
+  top: 25rem;
+  transform: translateY(-50%);
+  width: 30rem;
 }
-.Banner_description{
-  max-height:200px;
-  // background-color:red;
-  position:absolute;
-	white-space: nowrap;
-	margin:25px;
-	font-size:12px;
-		margin-left:8%;
-    max-width: 80%;
-    // background-color:yellow;
+
+.Banner_title {
+  float: left;
+  margin-left: 2%;
+  white-space: nowrap;
+  font-weight: 600;
+  margin-bottom: 6rem;
+  max-height: 8rem;
+  display: -webkit-box;
   -webkit-line-clamp: 4;
-    font-weight: 400;
-	  font-size:12px;
-    margin-bottom: 30px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    line-height:1.3em;
-    // letter-spacing:10px;
-     white-space: normal;
-     display: block;
-     overflow: hidden;
-   max-height: 5em;
-		// background: linear-gradient(to top, white, transparent);
-
-}
-.BannerButton{
-	    // background: #202125;
-   position:absolute;
-    // font-weight: 400;
-   
-	margin-left:10%;
-	
-  
-	margin-top:25%;
-    -webkit-text-size-adjust: none;
-	 
-  > .watchnow{
-       background: #F1C40F!important;
-    color: #111!important;
-    border-color: #F1C40F!important;
-    box-shadow: none!important;
-		    
-		  
-		    margin-right: 0.5rem!important;
-    display: inline-block;
-  
-   
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    
-   
-    user-select: none;
- 
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.6rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  }
-	 > .Detail{
-          background: #F1C40F!important;
-    color: #111!important;
-    border-color: #F1C40F!important;
-    box-shadow: none!important;
-		    
-		  
-		margin-left: 0.5rem!important;
-    display: inline-block;
-  
-   
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    
-   
-    user-select: none;
- 
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.6rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  }
+  -webkit-box-orient: vertical;
+  font-size: 2.0rem; /* Use rem units for font size */
 }
 
+.Banner_description {
+  max-height: 20rem;
+  position: absolute;
+  white-space: nowrap;
+  margin: 3%;
+  font-size: 1rem;
+  margin-left: 2%;
+  max-width: 80%;
+  -webkit-line-clamp: 4;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-height: 1.3rem;
+  white-space: normal;
+  display: block;
+  overflow: hidden;
+  max-height: 5rem;
+  font-size: 1rem; /* Use rem units for font size */
+}
 
+.BannerButton {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  margin-left: 2%;
+  margin-top: 10rem;
+}
 
+.BannerButton .watchnow {
+  background: #f1c40f!important;
+  color: #111!important;
+  border-color: #f1c40f!important;
+  box-shadow: none!important;
+  margin-right: 0.5rem!important;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.6rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
 
-
-
-
-
-
-
-
+.BannerButton .Detail {
+  background: #f1c40f!important;
+  color: #111!important;
+  border-color: #f1c40f!important;
+  box-shadow: none!important;
+  margin-left: 0.5rem!important;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.6rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;}

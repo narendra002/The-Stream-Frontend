@@ -1,21 +1,21 @@
 $row-background-color: rgb(0, 0, 0);
-$row-padding: 1rem;
-$row-heading-padding-left: 20px;
+$row-padding: 0.0625rem;
+$row-heading-padding-left: 1.25rem;
 $row-heading-font-weight: 400;
-$row-images-padding-top: 17px;
-$row-images-padding-left: 10px;
+$row-images-padding-top: 1.0625rem;
+$row-images-padding-left: 0.625rem;
 $row-images-width: 100%;
 $row-images-object-fit: cover;
 $row-images-overflow-x: hidden;
 $row-images-scrollbar-display: none;
 
-$card-margin: 0.5rem;
-$card-width: 200px;
+$card-margin: 0.3125rem;
+$card-width: 12.5rem;
 $card-cursor: pointer;
-$card-border-radius: 10px;
+$card-border-radius: 0.625rem;
 $card-transition: transform 0.5s;
-$card-height: 250px;
-$card-hover-transform: translateY(-10px) scale(1.1);
+$card-height: 15.625rem;
+$card-hover-transform: translateY(-0.625rem) scale(1.1);
 
 $row-height: auto;
 
@@ -62,24 +62,33 @@ $row-height: auto;
     }
   }
   
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 48rem) {
+    font-size: 1.5rem;
+    // margin-left: 0.3125rem;
+    // margin-right: 0.3125rem;
     > div {
-      flex-wrap: wrap;
-      justify-content: center;
+      // flex-wrap: wrap;
+      // justify-content: center;
     }
   }
   
-  @media only screen and (max-width: 576px) {
+  @media only screen and (max-width: 36rem) {
+    font-size: 1.25rem;
+    // margin-left: 0.25rem;
+    // margin-right: 0.25rem;
     > h2 {
       font-size: 1.5rem;
     }
     
     .card {
-      width: 150px;
-      height: 200px;
+      width: 9.375rem;
+      height: 12.5rem;
     }
   }
 }
+
+$arrow-button-size: 2rem;
+$arrow-button-margin: 0.625rem;
 
 .arrow-button {
   display: flex;
@@ -88,9 +97,9 @@ $row-height: auto;
   background-color: transparent;
   border: none;
   color: #fff;
-  font-size: 24px;
-  margin-left: 10px;
-  margin-right: 10px;
+  font-size: $arrow-button-size;
+  margin-left: $arrow-button-margin;
+  margin-right: $arrow-button-margin;
   cursor: pointer;
   transition: color 0.2s;
 

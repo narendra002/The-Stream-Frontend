@@ -1,122 +1,121 @@
 $bg:rgb(16,16,16);
+
 .MainMovie{
   height:fit-content;
   display:flex;
   justify-content:center;
-//  background-image: url(http://wallpaperstock.net/interstellar-movie-poster_wallpapers_46588_852x480.jpg);
-	background-size:cover;
-	background-repeat:no-repeat;
+  background-size:cover;
+  background-repeat:no-repeat;
   object-fit:center;
 	
 }
+
 .movie-backdrop {
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   object-fit: cover;
   opacity: 0.9;
   &:after{
-
-    //   background: #030303;
-    // background: radial-gradient(circle,rgba(255, 87, 51,0) 0,rgba(8,41,44,.8) 50%,#030303 80%);
-      background: rgb(34,193,195);
+    background: rgb(34,193,195);
     background: linear-gradient(265deg, transparent 43%, black 84%);
-    
-      content:"";
-      
-      width:100%;
-      height:100%;
-      position:absolute;
-      // background:$bg;
-      // opacity:0.4;
-    }
+    content:"";
+    width:100%;
+    height:100vh;
+    position:absolute;
+  }
 }
 
 .posterImg{
   height:fit-content;
-  width:220px;
-  border-radius: 10px;
+  width:13.75rem; /* 220px converted to rem */
+  border-radius: 0.625rem; /* 10px converted to rem */
 }
 
 .movieInfo{
   width:100%;
-  // background-color:green;
-  margin-bottom:50px;
+  margin-bottom:3.125rem; /* 50px converted to rem */
 }
 
 .imgandinfo{
-  width: 900px;
-
+  width: 56.25rem; /* 900px converted to rem */
   height: fit-content;
   display:flex;
-  margin-top:200px;
+  margin-top:12.5rem; /* 200px converted to rem */
   flex-direction:row;
-  padding-left:50px;
-  padding-right:50px;
-  padding-top:90px;
-
-  margin-right:200px;
-  // background-color:red;
-
+  padding-left:3.125rem; /* 50px converted to rem */
+  padding-right:3.125rem; /* 50px converted to rem */
+  padding-top:5.625rem; /* 90px converted to rem */
+  margin-right:12.5rem; /* 200px converted to rem */
 }
 
 .movieInfo{
-  padding-left:50px;
-  padding-right:50px;
+  padding-left:3.125rem; /* 50px converted to rem */
+  padding-right:3.125rem; /* 50px converted to rem */
   display:flex;
   justify-content:space-between;
   flex-direction: column;
-
-
   > .year{
-     font-size:16px;
-
+     font-size:1rem; /* 16px converted to rem */
   }
-  
 }
+
 .MovieName{
-       font-size:25px;
-
+  font-size:1.5625rem; /* 25px converted to rem */
 }
-.genres{
-  // background-color:black;
-  >ul{
-  display:flex;
-    justify-content:left;
-    margin-left:20px;
-  // flex-direction:row;
-    >li{
-          padding-right:30px;
 
+.genres{
+  >ul{
+    display:flex;
+    justify-content:left;
+    margin-left:1.25rem; /* 20px converted to rem */
+    >li{
+      padding-right:1.875rem; /* 30px converted to rem */
     }
   }
-  
 }
+
 .decription{
-  max-width:800px;
-  // text-align:center;
+  max-width:50rem; /* 800px converted to rem */
   overflow: hidden;
-  // text-overflow: ellipsis;
 }
+
 .duration_imdb{
   display:flex;
-  // background-color:red;
   justify-content:space-between;
 }
-// .Button{
-//      width:350px;
-//      display:flex;
-//      justify-content:space-between;
-//      // background-color:blue;
-//   > .watchnow{
-//     padding: 10px 40px 10px 40px ;
-//     background-color:red;
-//     border-radius: 25px;
-//     border:none;
-//     transform: 25px;
+@media only screen and (max-width: 768px) {
 
-//   }
-
+ 
+.movie-backdrop{
+  height: 100rem;
+  width: 47rem;
+  background-color: rgb(0, 0, 4);
+  background-size: cover; /* Scale the background image to cover the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat;}
+  .MainMovie {
+    height: 65rem; /* Set a fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  width: 40rem;
+  }
+  
+  .imgandinfo {
+    width:40rem; /* Set the width to 100% */
+    
+  }
+  .movieInfo{
+    width: 40rem;
+  }
+  
+ 
+  
+  
+  
+ 
+}

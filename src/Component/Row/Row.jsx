@@ -73,7 +73,14 @@ const Row = ({ title, arr = [] }) => {
       });
     }
   };
-
+  function getItemSize(height, itemCount) {
+    const totalPadding = 20; // total padding (top and bottom) between items
+    const availableHeight = height - totalPadding;
+    const itemHeight = availableHeight / itemCount;
+    return itemHeight;
+  } 
+  
+  const itemSize = getItemSize(220,1);
   return (
     <div className='row' ref={rowRef}>
       <h2>{title}</h2>
@@ -83,16 +90,16 @@ const Row = ({ title, arr = [] }) => {
           <AiOutlineArrowLeft />
         </button>
         <FixedSizeList 
-      
-          height={290}
-          width={1240}
-          itemSize={220}
-          itemCount={arr.length}
-          layout='horizontal'
-     
-        >
-          {RowItem}
-        </FixedSizeList>
+  style={{ height: '19rem', width: '120rem' }}
+  height={"height"}
+  width={1240}
+  itemSize={itemSize}
+  itemCount={arr.length}
+  layout='horizontal'
+>
+  {RowItem}
+</FixedSizeList>
+
 
         <button className='arrow-button' onClick={handleNext}>
           <AiOutlineArrowRight />
