@@ -18,12 +18,12 @@ const Moviedescription = () => {
   const genre = tvShow?.genre || Searchdata?.genre || movie?.genre;
   const Trailer = tvShow?.trailer || Searchdata?.trailer || movie?.trailer;
 
-  const [progress, setProgress] = useState(0);
-  const [isDownloading, setIsDownloading] = useState(false);
-  const [downloadStatus, setDownloadStatus] = useState('');
+  // const [progress, setProgress] = useState(0);
+  // const [isDownloading, setIsDownloading] = useState(false);
+  // const [downloadStatus, setDownloadStatus] = useState('');
 
-  const [cancelToken, setCancelToken] = useState(null);
-  const cancelTokenRef = useRef(null);
+  // const [cancelToken, setCancelToken] = useState(null);
+  // const cancelTokenRef = useRef(null);
 
   const downloadVideo = () => {
     window.location.href=`https://the-stream-backend.vercel.app/download?url=${Trailer}`;
@@ -38,7 +38,7 @@ const Moviedescription = () => {
       <p className='date'>{genre}</p>
       <p className='date'>{Air}</p>
       <p className='Dec_pera'>{OverView}</p>
-      <Button variant='primary' disabled={isDownloading} onClick={downloadVideo}>Download Trailer</Button>
+      {/* <Button variant='primary' disabled={isDownloading} onClick={downloadVideo}>Download Trailer</Button>
       {isDownloading && (
         <>
         <ProgressBar now={progress} label={`${progress}%`} />
@@ -47,8 +47,8 @@ const Moviedescription = () => {
           <Button variant='danger' onClick={cancelDownload}>Cancel</Button>
           <div>{downloadStatus === 'completed' ? 'Download Completed!' : downloadStatus === 'failed' ? 'Download Failed!' : ''}</div>
         </>
-      )}
-      <div className='Reaction'>
+      )} */}
+      {/* <div className='Reaction'>
         <div className='Exl'>
           <h className='emoji'>😃</h>
         </div>
@@ -58,9 +58,9 @@ const Moviedescription = () => {
         <div className='bad'>
           <h className='emoji'>😡</h>
         </div>
-     
+      */}
 
-      </div>
+      {/* </div> */}
     </div>
   );
   
