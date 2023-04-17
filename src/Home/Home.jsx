@@ -27,7 +27,7 @@ const Home = () => {
 
     return (
        <section className="home">
-     <Banner BannerType={TopRatedBanner}/>
+     <Banner/>
 
           <Row title={"Popular Movies"} arr={Popular}/>
           <Row title={"Top Rated"} arr={TopRated}/>

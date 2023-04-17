@@ -3,12 +3,30 @@ import './Row.scss';
 import { Link } from 'react-router-dom';
 import {  AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { FixedSizeList } from 'react-window';
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const Card = ({ poster }) => (
   <div className='maincard'>
     <img className='card' src={poster} alt='cover' />
   </div>
 );
+
+const Cards = ({movie}) => {
+
+    return  <Link to={'/MovieMain/'} state={{ tvShow: movie }} style={{textDecoration:"none", color:"white"}}>
+        <div className="cards">
+            <img className="cards__img" src={`${movie?movie.poster_path:""}`} />
+            <div className="cards__overlay">
+                <div className="card__title">{movie?movie.title:""}</div>
+                <div className="card__runtime">
+                    {movie?movie.release_date:""}
+                    <span className="card__rating">{movie?movie.vote_average:""}<i className="fas fa-star" /></span>
+                </div>
+                <div className="card__description">{movie ? movie.overview.slice(0,118)+"..." : ""}</div>
+            </div>
+        </div>
+    </Link>
+}
 
 const Row = ({ title, arr = [] }) => {
   const [start, setStart] = useState(0);
@@ -39,12 +57,17 @@ const Row = ({ title, arr = [] }) => {
 
   const RowItem = ({ index, style }) => {
     const item = arr[start + index];
+
     return (
-      <Link to={'/MovieMain/'} state={{ tvShow: item }}>
-        <div style={style}>
-          <Card key={item._id} poster={item.poster_path} />
-        </div>
-      </Link>
+      <div style={style}>
+        { item ?
+          <Cards movie={item}/>
+          :
+          <SkeletonTheme color="#202020" highlightColor="#444">
+              <Skeleton height={300} duration={2} />
+          </SkeletonTheme>
+        }
+      </div>
     );
   };
 
@@ -73,14 +96,16 @@ const Row = ({ title, arr = [] }) => {
       });
     }
   };
+  
   function getItemSize(height, itemCount) {
-    const totalPadding = 20; // total padding (top and bottom) between items
+    const totalPadding = 20; // total padding (top and bottom
+
     const availableHeight = height - totalPadding;
     const itemHeight = availableHeight / itemCount;
     return itemHeight;
   } 
   
-  const itemSize = getItemSize(220,1);
+  const itemSize = getItemSize(250,1);
   return (
     <div className='row' ref={rowRef}>
       <h2>{title}</h2>
@@ -90,7 +115,7 @@ const Row = ({ title, arr = [] }) => {
           <AiOutlineArrowLeft />
         </button>
         <FixedSizeList 
-  style={{ height: '19rem', width: '120rem' }}
+  style={{ height: '29rem', width: '120rem' }}
   height={"height"}
   width={1240}
   itemSize={itemSize}

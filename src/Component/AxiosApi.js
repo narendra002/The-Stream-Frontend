@@ -1,65 +1,37 @@
-import axios from "axios"
-const API_KEY = '4008ea8497eda5d3e80f32017f7d35bc';
-const url = "https://api.themoviedb.org/3";
-const url1 = "https://the-stream-backend.vercel.app";
+import axios from "axios";
 import React, { useState, useEffect } from 'react';
-export const BannerApi=(TypeBanner)=>{
-const [Banner, setBanner] = useState([]);
-	useEffect(()=>{
-		const fetchData= async() => {
-			const{data:{results},}=await axios.get(`${url}/movie/${TypeBanner}?api_key=${API_KEY}`);
-	 
-               setBanner(results[Math.floor(Math.random()*results.length-1)]);
 
-		};
-		fetchData();
-	 },[]);
-	return Banner;
-}
-export const BannerTvShowApi=(TypeBanner)=>{
-const [Banner, setBanner] = useState([]);
-	useEffect(()=>{
-		const fetchData= async() => {
-			const{data:{results},}=await axios.get(`${url}/tv/${TypeBanner}?api_key=${API_KEY}`);
-	 
-               setBanner(results[Math.floor(Math.random()*results.length-1)]);
+const url = "https://the-stream-backend.vercel.app";
 
-		};
-		fetchData();
-	 },[]);
-	return Banner;
-}
-export const MoviesApi=(TypeMovies)=>{
-const [Movies, setMovies] = useState([]);
-	useEffect(()=>{
-		const fetchMovies= async() => {
-			const{data:{results},}=await axios.get(`${url}/movie/${TypeMovies}?api_key=${API_KEY}`);
-	 
-               setMovies(results);
-            
-           
+export const BannerApi = () => {
+  const [Banner, setBanner] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res= await axios.get(`${url}/movie`);
+      setBanner(res.data.slice(0,10) );
+    };
+    fetchData();
+  }, []);
+  return Banner;
+};
 
-		
-		};
-		fetchMovies();
-	 },[]);
-	return Movies;
+export const BannerTvShowApi = () => {
+  const [Banner, setBanner] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data: { results } } = await axios.get(`${url}/tvShow`);
+      setBanner(results);
+    };
+    fetchData();
+  }, []);
+  return Banner;
+};
 
-}
-export const searchMovies = async (searchTerm) => {
-	try {
-	  const response = await axios.get(`${url1}/search/${searchTerm}`);
-	  return response.data;
-	} catch (error) {
-	  console.error(error);
-	  throw new Error('Failed to search movies');
-	}
-  };
 export const MovieApi=(TypeMovies)=>{
 	const [Movies, setMovies] = useState([]);
 		useEffect(()=>{
 			const fetchMovies= async() => {
-				const res= await axios.get(`${url1}/movie`);
+				const res= await axios.get(`${url}/movie`);
 				   setMovies(res.data);
 				
 			   
@@ -71,61 +43,44 @@ export const MovieApi=(TypeMovies)=>{
 		return Movies;
 	
 	}
-	export const AnimeApi = () => {
-		const [animes, setAnimes] = useState([]);
-	  
-		useEffect(() => {
-		  const fetchAnimes = async () => {
-			const res = await axios.get(`${url1}/anime`);
-			setAnimes(res.data);
-		  };
-	  
-		  fetchAnimes();
-		}, []);
-	  
-		return animes;
-	  };
-	export const TvShowApi=(TypeTvShows)=>{
-		const [TvShows, setTvShows] = useState([]);
-	useEffect(()=>{
-		const fetchTvShows= async() => {
-			const res= await axios.get(`${url1}/tvShow`);
-             setTvShows(res.data);
+
+export const AnimeApi = () => {
+  const [animes, setAnimes] = useState([]);
+  useEffect(() => {
+    const fetchAnimes = async () => {
+      const { data } = await axios.get(`${url}/anime`);
+      setAnimes(data);
+    };
+    fetchAnimes();
+  }, []);
+  return animes;
+};
+
+export const TvShowApi = () => {
+  const [TvShows, setTvShows] = useState([]);
+  useEffect(() => {
+    const fetchTvShows = async () => {
+      const { data: { results } } = await axios.get(`${url}/tvShow`);
+      setTvShows(results);
+    };
+    fetchTvShows();
+  }, []);
+  return TvShows;
+};
+
+const AxiosApi = (UpcomingMovies) => {
+	const [upcoming, setUpcoming] = useState([]);
 		
-		};
-		fetchTvShows();
-	 },[]);
-	return TvShows;
-
-}
-export const TvShowsApi=(TypeTvShows)=>{
-const [TvShows, setTvShows] = useState([]);
-	useEffect(()=>{
-		const fetchTvShows= async() => {
-			const{data:{results},}=await axios.get(`${url}/tv/${TypeTvShows}?api_key=${API_KEY}`);
-	
- setTvShows(results);
+		useEffect(()=>{
+			const fetchUpcoming = async() => {
+				const{data:{results},}=await axios.get(`${url}/movie/${UpcomingMovies}?api_key=${API_KEY}`);
 		
-		};
-		fetchTvShows();
-	 },[]);
-	return TvShows;
-
-}
-
-
-  const AxiosApi = (UpcomingMovies) => {
-const [upcoming, setUpcoming] = useState([]);
+	 setUpcoming(results);
+			
+			};
+			fetchUpcoming();
+		 },[UpcomingMovies,setUpcoming]);
+	return upcoming;
+	}
+	export default AxiosApi;
 	
-	useEffect(()=>{
-		const fetchUpcoming = async() => {
-			const{data:{results},}=await axios.get(`${url}/movie/${UpcomingMovies}?api_key=${API_KEY}`);
-	
- setUpcoming(results);
-		
-		};
-		fetchUpcoming();
-	 },[UpcomingMovies,setUpcoming]);
-return upcoming;
-}
-export default AxiosApi;

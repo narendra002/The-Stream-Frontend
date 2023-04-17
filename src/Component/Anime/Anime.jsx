@@ -11,7 +11,7 @@ const Anime = () => {
     return (
         <section className="anime">
        
-        <Banner BannerType={upcoming}/>
+        <Banner />
          
         <Row title={"Anime"} arr={Popular}/>
           

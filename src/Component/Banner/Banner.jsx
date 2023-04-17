@@ -1,36 +1,47 @@
-const PopularMovies = "popular";
-import React, { useState, useEffect } from 'react';
-import axios from "axios"
-import { Link } from 'react-router-dom';
-const API_KEY = '4008ea8497eda5d3e80f32017f7d35bc';
-const url = "https://api.themoviedb.org/3";
-const imgUrl = "https://image.tmdb.org/t/p/original";
-const Banner = ({ BannerType }) => {
+import React, { useState,useEffect } from 'react';
 
+import "./Banner.scss"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+import { BannerApi } from '../AxiosApi';
+import { Link } from "react-router-dom";
+function Banner() {
 
-
-
-	const link = `${imgUrl}${BannerType?.backdrop_path}`;
-
-	return (
-
-		<>
-			<div className="banner"
-				style={{ backgroundImage: `url('${link}')` }} >
-			</div>
-			<div className="Banner_content">
-				<h1 className="Banner_title">{BannerType.title || BannerType.name || BannerType.original_title}</h1>
-				<br></br>
-				<h3 className="Banner_description">{BannerType.overview}</h3>
-				<div className='BannerButton'>
-					<Link to={"/watch/" + BannerType._id} state={{ tvShow: BannerType }}>
-						<button className='watchnow'>▶ Watch Now</button>
-					</Link>
-
-					<button className='Detail'>Detail</button>
-				</div>
-			</div>
-		</>
-	)
+const BannerType=BannerApi();
+console.log(BannerType[0]);
+ return (
+    <> 
+    <div className='poster'>
+      <Carousel
+      showThumbs={false}
+      autoPlay={true}
+      transitionTime={3}
+infiniteLoop={true}
+showStatus={false}
+>{
+    BannerType.map(movie=>(  <Link to={'/MovieMain/'} state={{ tvShow: movie }} style={{textDecoration:"none", color:"white"}}>
+    <div className="posterImage">
+        <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} />
+    </div>
+    <div className="posterImage__overlay">
+        <div className="posterImage__title">{movie ? movie.title: ""}</div>
+        <div className="posterImage__runtime">
+            {movie ? movie.release_date : ""}
+            <span className="posterImage__rating">
+                {movie ? movie.vote_average :""}
+                <i className="fas fa-star" />{" "}
+            </span>
+        </div>
+        <div className="posterImage__description">{movie ? movie.overview : ""}</div>
+    </div>
+</Link>
+))
 }
-export default Banner;
+</Carousel>
+    </div>
+    
+    </>
+  )
+}
+
+export default Banner
