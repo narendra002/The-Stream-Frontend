@@ -6,7 +6,7 @@ $row-images-padding-top: 1.0625rem;
 $row-images-padding-left: 0.625rem;
 $row-images-width: 100%;
 $row-images-object-fit: cover;
-$row-images-overflow-x: hidden;
+$row-images-overflow-x: scroll;
 $row-images-scrollbar-display: none;
 
 $card-margin: 0.3125rem;
@@ -43,9 +43,7 @@ $row-height: auto;
     overflow: $row-images-overflow-x;
     
 
-    &::-webkit-scrollbar {
-      display: $row-images-scrollbar-display;
-    }
+   
 
     .card {
       margin: $card-margin;
@@ -61,7 +59,9 @@ $row-height: auto;
       }
     }
   }
-  
+  div::-webkit-scrollbar {
+    display: $row-images-scrollbar-display;
+  }
   @media only screen and (max-width: 48rem) {
     font-size: 1.5rem;
     // margin-left: 0.3125rem;
