@@ -60,8 +60,8 @@ export const TvShowApi = () => {
   const [TvShows, setTvShows] = useState([]);
   useEffect(() => {
     const fetchTvShows = async () => {
-      const { data: { results } } = await axios.get(`${url}/tvShow`);
-      setTvShows(results);
+      const { data } = await axios.get(`${url}/tvShow`);
+      setTvShows(data);
     };
     fetchTvShows();
   }, []);
