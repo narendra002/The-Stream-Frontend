@@ -1,128 +1,91 @@
 import React, { useState } from 'react';
-import Autosuggest from 'react-autosuggest';
-import PropTypes from 'prop-types';
-import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
-import './Navbar.scss';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
-  const navigate = useNavigate();
-  const [value, setValue] = useState('');
-  const [suggestions, setSuggestions] = useState([]);
+function Sidebar() {
+  const [drawerPos, setDrawerPos] = useState('half');
 
-  const fetchSearchSuggestions = async (searchValue) => {
-    try {
-      const movieResponse = await axios.get(`https://the-stream-backend.vercel.app/movie/`);
-      const movieSuggestions = movieResponse.data.filter((movie) =>
-        movie.title.toLowerCase().includes(searchValue.toLowerCase())
-      ).slice(0, 3);
-  
-      const tvShowResponse = await axios.get(`https://the-stream-backend.vercel.app/tvShow/`);
-      const tvShowSuggestions = tvShowResponse.data.filter((tvShow) =>
-        tvShow.title.toLowerCase().includes(searchValue.toLowerCase())
-      ).slice(0, 3);
-  
-      const AnimeResponse = await axios.get(`https://the-stream-backend.vercel.app/anime/`);
-      const AnimeSuggestions = AnimeResponse.data.filter((anime) =>
-        anime.title.toLowerCase().includes(searchValue.toLowerCase())
-      ).slice(0, 3);
-  
-  
-      const allSuggestions = [...movieSuggestions, ...tvShowSuggestions, ...AnimeSuggestions ];
-      setSuggestions(allSuggestions);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  
-  const renderSuggestion = (suggestion) => <div>{suggestion.title}</div>;
-
-  const onSuggestionsFetch = ({ value }) => {
-    fetchSearchSuggestions(value);
+  const handleDrawer = () => {
+    setDrawerPos((prevDrawerPos) => (prevDrawerPos === 'half' ? 'full' : 'half'));
   };
 
-  const onSuggestionsClear = () => {
-    setSuggestions([]);
-  };
-
-  const handleSuggestionSelect = (event, { suggestion }) => {
-    setValue(suggestion.title);
-    navigate(`/watch/${suggestion._id}`, { state: suggestion });
-    setValue('');
-  };
-
-  const inputProps = {
-    placeholder: 'Search',
-    value,
-    onChange: (event, { newValue }) => setValue(newValue),
-    required: true,
-  };
+  const menuItems = [
+    {
+      iconSrc: "https://img.icons8.com/ios-glyphs/30/search.png",
+      text: "Search",
+      link: "/search",
+    },
+    {
+      iconSrc: "https://img.icons8.com/fluency-systems-filled/48/home.png",
+      text: "Home",
+      link: "/",
+    },
+    {
+      iconSrc: "https://img.icons8.com/material-rounded/24/film-reel.png",
+      text: "Movies",
+      link: "/movies",
+    },
+    {
+      iconSrc: "https://img.icons8.com/fluency-systems-filled/48/tv.png",
+      text: "TV Shows",
+      link: "/TvShows",
+    },
+    {
+      iconSrc: "https://img.icons8.com/ios-glyphs/30/anime.png",
+      text: "Anime",
+      link: "/anime",
+    },
+  ];
 
   return (
-    <nav className='header'>
-      <h1 className='finallogo'>The-Stream</h1>
-      <div className='line'>
-        <ul>
-          <li>
-            <Link to='/'>Home</Link>
-          </li>
-          <li>
-            <Link to='/Movies'>Movies</Link>
-          </li>
-          <li>
-            <Link to='/TvShows'>Tv Show</Link>
-          </li>
-          <li>
-            <Link to='/Anime'>Anime</Link>
-          </li>
-          <li>
-            <Link to='/upload'>Upload</Link>
-          </li>
-        </ul>
-        <div className='container'>
-          <SearchBox
-            suggestions={suggestions}
-            onSuggestionsFetch={onSuggestionsFetch}
-            onSuggestionsClear={onSuggestionsClear}
-            onSuggestionSelect={handleSuggestionSelect}
-            inputProps={inputProps}
-            renderSuggestion={renderSuggestion}
-          />
-        </div>
+    <aside
+      className={`fixed h-full overflow-y-auto z-20 ${
+        drawerPos === 'half' ? 'w-20' : drawerPos === 'full' ? 'w-64' : 'w-0'
+      } bg-black rounded-r-lg transition-all ease-in-out duration-300`}
+    >
+      <div className="pt-10 px-4 pb-10 flex items-center">
+        <img
+          width="24"
+          height="24"
+          src="https://img.icons8.com/ios-glyphs/30/menu.png"
+          alt="menu"
+          onClick={handleDrawer}
+          style={{ filter: 'brightness(0) invert(1)' }}
+          className={`cursor-pointer hover:text-green-800 hover:scale-110 transition-transform ${
+            drawerPos === 'half' ? 'ml-2' : ''
+          }`}
+        />
+        <Link
+          to="/"
+          className={`text-white ${drawerPos === 'half' ? 'ml-8' : drawerPos === 'full' ? 'ml-2' : ''} font-bold text-lg`}
+        >
+          The Stream
+        </Link>
       </div>
-    </nav>
+      <ul className="flex-col p-1">
+        {menuItems.map((item, index) => (
+          <li
+            key={index}
+            className="flex items-center text-white px-4 py-4 hover:transform hover:translate-x-5 hover:text-blue-500 hover:border-l-2 hover:border-blue-500 cursor-pointer transition-all duration-300 ease-in-out"
+          >
+            <img
+              width="24"
+              height="24"
+              src={item.iconSrc}
+              alt={item.text}
+              style={{ filter: 'brightness(0) invert(1)' }}
+              className={` ${drawerPos === 'half' ? 'ml-2' : ''}`}
+            />
+            <Link
+              to={item.link}
+              className={`text-white ${drawerPos === 'half' ? 'ml-7' : drawerPos === 'full' ? 'ml-2' : ''} font-bold`}
+            >
+              {item.text}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </aside>
   );
-};
+}
 
-const SearchBox = ({
-  suggestions,
-  onSuggestionsFetch,
-  onSuggestionsClear,
-  onSuggestionSelect,
-  inputProps,
-  renderSuggestion,
-}) => {
-  return (
-    <Autosuggest
-      suggestions={suggestions}
-      onSuggestionsFetchRequested={onSuggestionsFetch}
-      onSuggestionsClearRequested={onSuggestionsClear}
-      onSuggestionSelected={onSuggestionSelect}
-      getSuggestionValue={suggestion => suggestion.title}
-      renderSuggestion={renderSuggestion}
-      inputProps={inputProps}
-    />
-  );
-};
-
-// Add PropTypes check for suggestions
-SearchBox.propTypes = {
-  suggestions: PropTypes.array.isRequired,
-  onSuggestionsFetch: PropTypes.func.isRequired,
-  onSuggestionsClear: PropTypes.func.isRequired,
-  onSuggestionSelect: PropTypes.func.isRequired,
-  inputProps: PropTypes.object.isRequired,
-  renderSuggestion: PropTypes.func.isRequired,
-};
-
-export default Navbar;
+export default Sidebar;

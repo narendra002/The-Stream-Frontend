@@ -26,8 +26,8 @@ const Home = () => {
 
 
     return (
-       <section className="home">
-     <Banner/>
+       <div  className='ml-[5.45%] m-4'>
+        <Banner />
 
           <Row title={"Popular Movies"} arr={Popular}/>
           <Row title={"Top Rated"} arr={TopRated}/>
@@ -35,7 +35,7 @@ const Home = () => {
          
 
         
-       </section>
+       </div>
     )
 }
 
