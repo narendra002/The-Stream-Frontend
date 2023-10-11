@@ -1,142 +1,53 @@
 {
-  
   "name": "react-typescript",
-  
   "version": "1.0.0",
-  
   "type": "module",
-  
   "description": "React TypeScript on Replit, using Vite bundler",
-  
   "scripts": {
-  
-    
-  "dev": "vite",
-  
-    
-  "build": "tsc && vite build",
-  
-    
-  "preview": "vite preview"
-  
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  
   "keywords": [],
-  
   "author": "",
-  
   "license": "ISC",
-  
   "dependencies": {
-  
-    
-  "@vitejs/plugin-react": "^3.1.0",
-  
-    
-  "axios": "^1.3.4",
-  
-    
-  "bootstrap": "^5.2.3",
-  
-    
-  "dispatch": "^1.0.2",
-  
-    
-  "express": "^4.18.2",
-  
-    
-  "global": "^4.4.0",
-  
-    
-  "node-modules": "^1.0.1",
-  
-    
-  "prop-types": "^15.8.1",
-  
-    
-  "react": "^18.2.0",
-  
-    
-  "react-autosuggest": "^10.1.0",
-  
-    
-  "react-bootstrap": "^2.7.2",
-  
-    
-  "react-hamburger-menu": "^1.2.1",
-  
-    
-  "react-helmet": "^6.1.0",
-  
-    
-  "react-icons": "^4.8.0",
-  
-    
-  "react-infinite": "^0.13.0",
-  
-    
-  "react-loading-skeleton": "^3.2.0",
-  
-    
-  "react-player": "^2.12.0",
-  
-    
-  "react-providers": "^2.0.2",
-  
-    
-  "react-redux": "^8.0.5",
-  
-    
-  "react-responsive-carousel": "^3.2.23",
-  
-    
-  "react-router-dom": "^6.10.0",
-  
-    
-  "react-store": "^0.1.3",
-  
-    
-  "react-use-effect": "^0.0.1",
-  
-    
-  "react-window": "^1.8.8",
-  
-    
-  "redux": "^4.2.1",
-  
-    
-  "sass": "^1.60.0",
-  
-    
-  "video-react": "^0.16.0",
-  
-    
-  "vite": "^4.2.1",
-  
-    
-  "ytdl-core": "^4.11.4"
-  
+    "@vitejs/plugin-react": "^3.1.0",
+    "axios": "^1.3.4",
+    "bootstrap": "^5.2.3",
+    "dispatch": "^1.0.2",
+    "express": "^4.18.2",
+    "global": "^4.4.0",
+    "node-modules": "^1.0.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-autosuggest": "^10.1.0",
+    "react-bootstrap": "^2.7.2",
+    "react-hamburger-menu": "^1.2.1",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.8.0",
+    "react-infinite": "^0.13.0",
+    "react-loading-skeleton": "^3.2.0",
+    "react-player": "^2.12.0",
+    "react-providers": "^2.0.2",
+    "react-redux": "^8.0.5",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.10.0",
+    "react-store": "^0.1.3",
+    "react-use-effect": "^0.0.1",
+    "react-window": "^1.8.8",
+    "redux": "^4.2.1",
+    "sass": "^1.60.0",
+    "video-react": "^0.16.0",
+    "vite": "^4.2.1",
+    "ytdl-core": "^4.11.4"
   },
-  
   "devDependencies": {
-  
-    
-  "@types/react": "^18.0.31",
-  
-    
-  "autoprefixer": "^10.4.16",
-  
-    
-  "postcss": "^8.4.31",
-  
-    
-  "react-dom": "^18.2.0",
-  
-    
-  "tailwindcss": "^3.3.3",
-  
-    
-  "typescript": "^5.0.3"
-  
+    "@types/react": "^18.0.31",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.0.3"
   }
 }

@@ -20,7 +20,7 @@ function Banner() {
   }
 
   return (
-    <div className="relative ">
+    <div className="relative  ">
       <Carousel
         showThumbs={false}
         autoPlay={false}
@@ -40,7 +40,7 @@ function Banner() {
                 <img
                   src={movie && movie.backdrop_path}
                   alt={movie ? movie.name || movie.title : ''}
-                  className="object-fill h-screen rounded-md shadow-lg opacity-100 transition-opacity duration-300"
+                  className="object-fill  rounded-md shadow-lg opacity-100 transition-opacity duration-300"
                   style={{ filter: 'brightness(0.3) ' }} // Adjust brightness and blur values
                 />
               </div>

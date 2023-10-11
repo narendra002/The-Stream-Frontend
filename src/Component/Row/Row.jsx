@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { FixedSizeList } from 'react-window';
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-
+import './Row.scss'
 
 
 const Cards = ({ movie }) => {
@@ -97,7 +97,7 @@ const Row = ({ title, arr = [] }) => {
   const itemSize = getItemSize(250, 1);
 
   return (
-    <div className='' ref={rowRef}>
+    <div className='row' ref={rowRef}>
       <h2 className="pl-5/4 font-light">{title}</h2>
       <div className="flex items-center">
         <button className='arrow-button' onClick={handlePrev}>
